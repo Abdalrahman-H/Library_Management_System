@@ -1,14 +1,16 @@
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
-
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -124,9 +126,9 @@ public class LoginPage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordActionPerformed
 
+    //******************************** Start MySQL code ***********************************
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        String url="jdbc:mysql://localhost:3306/Library_M_S?useSSL=false";
+        String url="jdbc:mysql://localhost:3306/library_management_system?useSSL=false";
         String mysqluser="root";
         String mysqlpwd= "12345";
         String pswrd=new String(password.getPassword());
@@ -146,7 +148,6 @@ public class LoginPage extends javax.swing.JFrame {
                     Dashboard dsh = new Dashboard();
                     dsh.setVisible(true);
                     this.dispose();
-                    //this.dispose();
                 }
                 else{
                     JOptionPane.showMessageDialog(this,"Username or Password entered is Invalid");
@@ -161,6 +162,7 @@ public class LoginPage extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
+    //******************************** End MySQL code ***********************************
 
     /**
      * @param args the command line arguments
